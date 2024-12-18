@@ -6,8 +6,8 @@ const { publicRuntimeConfig } = getConfig()
 
 export const Intro = ({ title, description, image, buttons }) => {
 	return (
-		<div className="bg-secondary py-5 px-5">
-			<div className="container">
+        (<div className="bg-secondary py-5 px-5">
+            <div className="container">
 				<div className=" row align-items-center">
 					<div className="col-sm-6">
 						<h1 className="text-primary fw-bold display-3">{title}</h1>
@@ -15,12 +15,17 @@ export const Intro = ({ title, description, image, buttons }) => {
 						<div className="text-center">
 							{buttons.map((value, index) => (
 								(value.isPrimary) ?
-									<Link key={index} href={value.link}>
-										<a className="btn btn-primary my-1 mx-3">{value.title}</a>
+									<Link key={index} href={value.link} className="btn btn-primary my-1 mx-3">
+										{value.title}
 									</Link>
 									:
-									<Link key={index} href={value.link}>
-										<a target="_blank" rel="noreferrer" className="btn btn-outline-primary my-1 mx-3">{value.title}</a>
+									<Link
+                                        key={index}
+                                        href={value.link}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="btn btn-outline-primary my-1 mx-3">
+										{value.title}
 									</Link>
 							))}
 						</div>
@@ -34,8 +39,8 @@ export const Intro = ({ title, description, image, buttons }) => {
 					</div>
 				</div>
 			</div>
-		</div>
-	);
+        </div>)
+    );
 }
 
 export const About = ({ title, description }) => {
