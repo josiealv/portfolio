@@ -12,6 +12,7 @@
   },
   "scripts": {
     "prebuild": "node scripts/favicons.js",
+    "clean": "rm -rf node_modules/gh-pages/.cache",
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
